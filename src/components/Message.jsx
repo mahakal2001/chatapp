@@ -6,6 +6,8 @@ const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const currTime = new Date().toLocaleTimeString();
+
   const ref = useRef();
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <p>{currTime}</p>{" "}
       </div>
       <div className="messageContent">
         <p>{message.text}</p>
